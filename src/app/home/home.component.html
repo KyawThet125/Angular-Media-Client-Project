@@ -1,1 +1,13 @@
-<p>home works!</p>
+<div class="container">
+    <div class="row my-4">
+        <div class="col-md-4 mb-3" *ngFor="let cat of cats">
+            <div class="card" >
+                <img src="http://localhost:3000/img/{{cat.image}}" class="card-img-top imageheight" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{cat.name}}</h5>
+                    <a [routerLink]="['detail',cat.id]" class="btn btn-primary btn-sm">Detail</a>
+                </div>
+                </div>
+        </div>
+    </div>
+</div>

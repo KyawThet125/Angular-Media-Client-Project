@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LocalService } from '../sysgen/localservices';
 
 @Component({
   selector: 'app-home',
@@ -6,10 +7,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  cats;
+  constructor(private http : LocalService) { }
 
-  constructor() { }
-
-  ngOnInit() {
+ngOnInit() {
+  this.http.getAllCats().subscribe(
+    response => {
+      this.cats = response.msg
+      console.log(response.msg);
+    },
+    error => {
+      console.log(error);
+    }
+  )
   }
 
 }
