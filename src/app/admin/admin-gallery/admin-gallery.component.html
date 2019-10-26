@@ -1,0 +1,14 @@
+<div class="container my-4">
+     <a class="btn btn-primary btn-sm" routerLink="/admin/gallery/create" > Create</a>
+    <div class="row my-4">
+        <div class="col-md-4 mb-3" *ngFor="let image of images">
+            <div class="card" >
+                <img src="http://localhost:3000/uploads/{{image.image}}" class="card-img-top imageheight" alt="...">
+                <div class="card-body">
+                   <button class="btn btn-primary btn-block" 
+                   (click)="copyImage(image.image)">Copy</button>
+                </div>
+             </div>
+        </div>
+    </div>
+</div>
