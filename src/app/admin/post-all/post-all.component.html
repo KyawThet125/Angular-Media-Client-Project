@@ -1,4 +1,19 @@
 <div class="container my-3">
+    <a routerLink="/admin/post/create" class="btn btn-primary btn-sm mb-2">Create</a>
+    <div class="row my-4">
+        <div class="col-md-4 mb-3" *ngFor="let product of products">
+            <div class="card" >
+                <img src="{{product.image}}" class="card-img-top imageheight" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{product.name}}</h5>
+                    <a [routerLink]="['detail',product.id]" class="btn btn-primary btn-sm">Detail</a>
+                </div>
+                </div>
+        </div>
+    </div>
+</div>
+
+<div class="container my-3">
     <div class="row justify-content-center">
         <nav aria-label="Page navigation example">
   <ul class="pagination">
@@ -15,18 +30,5 @@
     </li>
   </ul>
 </nav>
-    </div>
-</div>
-<div class="container">
-    <div class="row my-4">
-        <div class="col-md-4 mb-3" *ngFor="let product of products">
-            <div class="card" >
-                <img src="{{product.image}}" class="card-img-top imageheight" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">{{product.name}}</h5>
-                    <a [routerLink]="['detail',product.id]" class="btn btn-primary btn-sm">Detail</a>
-                </div>
-                </div>
-        </div>
     </div>
 </div>

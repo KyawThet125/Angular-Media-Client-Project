@@ -14,6 +14,7 @@ export class LocalService {
     adminGalleryAllUrl = this.BASE_URL + 'admin/gallery/all';
     adminUploadImageUrl = this.BASE_URL + 'admin/image/upload';
     adminProductPignate = this.BASE_URL + "admin/product/paginate";
+    productCreateUrl = this.BASE_URL + "admin/product/create";
 
     isAuth = new Subject<boolean>();
     authBool = this.isAuth.asObservable();
@@ -80,6 +81,14 @@ export class LocalService {
         return this.http.get(link).pipe(
             map(
                 (response: any) => response
+            )
+        )
+    }
+
+    productCreate(data) {
+        return this.http.post(this.productCreateUrl, data).pipe(
+            map(
+                (response : any) =>response
             )
         )
     }

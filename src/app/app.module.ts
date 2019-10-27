@@ -23,6 +23,7 @@ import { PostCreateComponent } from './admin/post-create/post-create.component';
 import { AdminHomeComponent } from './admin/admin-home/admin-home.component';
 import { AuthInterceptor } from './sysgen/auth.interceptor';
 import { PostAllComponent } from './admin/post-all/post-all.component';
+import { LoadingComponent } from './loading/loading.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { PostAllComponent } from './admin/post-all/post-all.component';
     PostCreateComponent,
     AdminHomeComponent,
     PostAllComponent,
+    LoadingComponent,
   ],
   imports: [
     BrowserModule,

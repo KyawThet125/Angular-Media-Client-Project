@@ -11,9 +11,11 @@ import { GalleryCreateComponent } from '../admin/gallery-create/gallery-create.c
 import { PostCreateComponent } from '../admin/post-create/post-create.component';
 import { AdminGalleryComponent } from '../admin/admin-gallery/admin-gallery.component';
 import { PostAllComponent } from '../admin/post-all/post-all.component';
+import { LoadingComponent } from '../loading/loading.component';
 
 const CUROUTE: Routes = [
     { path: '', component: HomeComponent },
+    { path: 'loading', component: LoadingComponent },
     { path: 'detail/:id', component: DetailComponent },
     {
         path: 'auth', component: AuthComponent, children :[

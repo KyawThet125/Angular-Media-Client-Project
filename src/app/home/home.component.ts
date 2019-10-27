@@ -8,13 +8,15 @@ import { LocalService } from '../sysgen/localservices';
 })
 export class HomeComponent implements OnInit {
   cats;
+  showLoad = false;
   constructor(private http : LocalService) { }
 
-ngOnInit() {
+  ngOnInit() {
+    this.showLoad = true;
   this.http.getAllCats().subscribe(
     response => {
       this.cats = response.msg
-      console.log(response.msg);
+      this.showLoad = false
     },
     error => {
       console.log(error);
